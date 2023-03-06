@@ -129,16 +129,24 @@ we have you covered. In this repository, you'll find everything you need for thi
 
 ## 2. - Astra Block Quick Start
 
-- https://www.datastax.com/products/astra-block
+Astra Block is a blockchain data service that offers real-time indexed blockchain data for building Web3 and decentralized applications (dapps).
 
-- https://docs.datastax.com/en/astra-serverless/docs/block/overview.html
+With Astra Block, you can stream a sanitized blockchain dataset into an Astra database in real-time. The second a new block is mined, your Astra database will immediately be updated with the new, clean blockchain data.
 
-- https://docs.datastax.com/en/astra-serverless/docs/block/quickstart.html
+> `More Information:`
+> - [Reference Documentation](https://docs.datastax.com/en/astra-serverless/docs/block/overview.html)
+> - [QuickStart Page](https://docs.datastax.com/en/astra-serverless/docs/block/quickstart.html)
 
 
 ### 2.1 - Request Access
 
+- `✅ 2.1.a` - Access the [registration page](https://www.datastax.com/products/astra-block) and select the `[REQUEST ACCESS]` button.
+
+- `✅ 2.1.b` - Fill the form with your contact information, make sure to use the email you used to register to Astra.
+
 ![](img/astra-block-request.png?raw=true")
+
+- `✅ 2.1.c` - Wait for the team to enable you. It is a manual operation that can a bit of time.
 
 ![](img/astra-block-request-2.png?raw=true")
 
