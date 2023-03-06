@@ -315,14 +315,83 @@ query getTokenByAddress {
 >     }
 >   }
 > }
-```
-
+> ```
 
 ## LAB3 - Ethereum Explorer
 
 ### 3.1 - Setup the app
 
-- CLI ?
+
+> `✅ 1.3.a` ↗️ _Right Click and select open as a new Tab..._
+>
+> [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/datastaxdevs/workshop-astra-block)
+
+### 1.4 - Setup Astra CLI
+
+> **Note**:  The **Astra CLI** is a command-line interface (CLI) tool for managing Apache Cassandra databases hosted on Datastax Astra. It allows developers to perform tasks like creating and managing databases, executing Cassandra queries, and managing security and access control. The Astra CLI simplifies database management and provides an alternative to the Astra web interface, enabling automation and integration with other tools and workflows.
+
+- `✅ 1.4.a` **Locate the terminal called `setup` and check that the CLI is available**
+
+```
+astra --version
+```
+
+> 🖥️ `output`
+>
+> ```
+> $ astra --version
+> 0.2.1
+> ```
+
+- `✅ 1.4.b` **Trigger the setup command**
+
+```
+astra setup
+```
+
+> 🖥️ `output`
+>
+> ```
+>     _____            __                  
+>    /  _  \   _______/  |_____________    
+>   /  /_\  \ /  ___/\   __\_  __ \__  \  
+>  /    |    \\___ \  |  |  |  | \// __ \_ 
+>  \____|__  /____  > |__|  |__|  (____  /
+>          \/     \/                   \/ 
+>            Version: 0.2.1
+> 
+>  -----------------------
+>  ---      SETUP      ---
+>  -----------------------
+> 
+> $ Enter an Astra token:
+> ```
+
+- `✅ 1.4.c` **Provide your token as asked (starting witg AstraCS:..)**
+
+> 🖥️ `output`
+>
+> ```
+> [OK]    Configuration has been saved.
+> [OK]    Enter 'astra help' to list available commands.
+> ```
+
+- `✅ 1.4.d` **List your existing Users.**
+
+```bash
+astra user list
+```
+
+> 🖥️ `output`
+>
+> ```
+> +--------------------------------------+-----------------------------+---------------------+
+> | User Id                              | User Email                  | Status              |
+> +--------------------------------------+-----------------------------+---------------------+
+> | b665658a-ae6a-4f30-a740-2342a7fb469c | cedrick.lunven@datastax.com | active              |
+> +--------------------------------------+-----------------------------+---------------------+
+> ```
+
 
 - Create a .env file using the .env.example as an example
 
