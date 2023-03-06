@@ -142,6 +142,8 @@ With Astra Block, you can stream a sanitized blockchain dataset into an Astra da
 
 - `✅ 2.1.a` - Access the [registration page](https://www.datastax.com/products/astra-block) and select the `[REQUEST ACCESS]` button.
 
+![](img/astra-block-request-1.png?raw=true")
+
 - `✅ 2.1.b` - Fill the form with your contact information, make sure to use the email you used to register to Astra.
 
 ![](img/astra-block-request.png?raw=true")
@@ -150,40 +152,55 @@ With Astra Block, you can stream a sanitized blockchain dataset into an Astra da
 
 ![](img/astra-block-request-2.png?raw=true")
 
-
-
-```
-todo
-```
-```
-todo
-```
+Upon submission, DataStax will begin reviewing your request. Once your request is approved, a DataStax representative will reach out to you via email to discuss the next steps for creating your Block-enabled database.
 
 ### 2.2 - Create Astra Block DB
 
+At this time, Block-enabled databases can only be manually created by DataStax upon request.
+
+If you have yet to create your first Block-enabled database, you can request one by following the procedure in Request access to Astra Block.
+
+If you’re already a user of Astra Block and would like to create additional Block-enabled databases, please send a request in a reply to your original Astra Block invitation email, or as a message via the Intercom widget in the lower right-hand corner of the Astra Portal.
+
+- `✅ 2.2.a` - Locate button [Clone Bockchain Database] to start your journey.
+
 ![](img/astra-home.png?raw=true")
+
+- `✅ 2.2.b` - Fill DB creation form selecting `Ethereum (Complete Dataset)`
+
 
 ![](img/astra-create.png?raw=true")
 
+
+- `✅ 2.2.c` - It will take a few seconds for the database to be available
+
 ![](img/astra-initializing.png?raw=true")
 
-```
-todo
-```
+- `✅ 2.2.d` - A new Tab will be available `Block`, make sure to `[Enable Block]`
+
+![](img/astra-block-request-3.png?raw=true")
 
 ### 2.3 - First Requests
 
-- CQL Console
+You are all set with an Active Database containing Ethereum data. Firstly let us use the `CQL Console` to navigate the data.
+
+- `✅ 2.3.a` - Locate tab `CQL Console` and show the console.
 
 ![](img/cql-console.png?raw=true")
+
+- `✅ 2.3.b` - Pick the `ethereum` keyspace with CQLSH
 
 ```sql
 use ethereum ;
 ```
 
+- `✅ 2.3.c` - Describe tables with CQLSH
+
 ```sql
 describe table tokens;
 ```
+
+- `✅ 2.3.d` - Access Table data
 
 ```sql
 select address,decimals,name,symbol,block_timestamp 
@@ -191,35 +208,35 @@ from tokens
 LIMIT 10;
 ```
 
-```
- address                                    | decimals | name            | symbol | block_timestamp
---------------------------------------------+----------+-----------------+--------+---------------------------------
- 0xc14ca0805194dc4a1319dcad80352d8033763b92 |       18 |             WJL |    WJL | 2018-12-25 08:24:03.000000+0000
- 0x69a2bf7c7fe7cd4ce69b8d645980261582e26e16 |        0 |  Artem Anisimov |     AA | 2019-12-30 14:19:51.000000+0000
- 0xca3537f73cce6dc0aa1611d79f4b0fdc2dfe31d2 |     null |                 |   null | 2017-02-06 18:28:26.000000+0000
- 0x17c5134461f501b4c00ac8082d2d5a3ff0ba2d3e |       18 |          YUANZE | YUANZE | 2021-06-11 12:24:53.000000+0000
- 0x62397c4e8f064a94806abcfc85fb96daf2d43e2c |        0 |                 |        | 2021-07-09 08:47:43.000000+0000
- 0x69510449d500fcaf8eb79a2f1448019f3854344a |        5 |        SD Chain |     SD | 2020-04-10 12:19:23.000000+0000
- 0xcbbd061680091d4d84db4db7a8060708d50f5e65 |       18 |          CoinUs |   BNUS | 2019-03-07 10:13:06.000000+0000
- 0x5da482344df827dccecd7c8aee675c463b12a915 |       18 |    FortFC Token |   FFCT | 2018-09-17 12:42:52.000000+0000
- 0x2c1bae1aec1bcc328da0cabea8c6a73c076f0af9 |       10 | NothingButBased |  BASED | 2022-10-12 17:33:47.000000+0000
- 0x99bada568a90e203374ee8ca2d938c1a319d4130 |       18 |             XXH |    XXH | 2018-11-17 06:34:56.000000+0000
- ```
+> `Output`
+> ```
+>  address                                    | decimals | name            | symbol | block_timestamp
+> --------------------------------------------+----------+-----------------+--------+---------------------------------
+>  0xc14ca0805194dc4a1319dcad80352d8033763b92 |       18 |             WJL |    WJL | 2018-12-25 08:24:03.000000+0000
+>  0x69a2bf7c7fe7cd4ce69b8d645980261582e26e16 |        0 |  Artem Anisimov |     AA | 2019-12-30 14:19:51.000000+0000
+>  0xca3537f73cce6dc0aa1611d79f4b0fdc2dfe31d2 |     null |                 |   null | 2017-02-06 18:28:26.000000+0000
+>  0x17c5134461f501b4c00ac8082d2d5a3ff0ba2d3e |       18 |          YUANZE | YUANZE | 2021-06-11 12:24:53.000000+0000
+>  0x62397c4e8f064a94806abcfc85fb96daf2d43e2c |        0 |                 |        | 2021-07-09 08:47:43.000000+0000
+>  0x69510449d500fcaf8eb79a2f1448019f3854344a |        5 |        SD Chain |     SD | 2020-04-10 12:19:23.000000+0000
+>  0xcbbd061680091d4d84db4db7a8060708d50f5e65 |       18 |          CoinUs |   BNUS | 2019-03-07 10:13:06.000000+0000
+>  0x5da482344df827dccecd7c8aee675c463b12a915 |       18 |    FortFC Token |   FFCT | 2018-09-17 12:42:52.000000+0000
+>  0x2c1bae1aec1bcc328da0cabea8c6a73c076f0af9 |       10 | NothingButBased |  BASED | 2022-10-12 17:33:47.000000+0000
+>  0x99bada568a90e203374ee8ca2d938c1a319d4130 |       18 |             XXH |    XXH | 2018-11-17 06:34:56.000000+0000
+> ```
 
+The application will use the GraphQL Api to interact with the database, let us have a look at this API.
 
+- `✅ 2.3.e` - Locate Playground, in the `Connect` Tab by scrolling down and clicking graphQL
 
-- describe tables
+![](img/astra-graphql-1.png?raw=true")
 
-- select tokens limit10
+- `✅ 2.3.f` - There click on the `GraphQL Playground` link.
 
-- Connect TAB, GraphQL Playground
+![](img/astra-graphql-2.png?raw=true")
 
-![](img/gql-documentation.png?raw=true")
+- `✅ 2.3.g` - List Keyspaces in db `workshop`
 
-![](img/gql-gettokens.png?raw=true")
-
-
-- List Keyspaces in db `workshop`
+In the left part of the screen enter the following request and validate with the Big triangle button in the middle (play)
 
 ```yaml
 query getAllKeyspaces{ 
@@ -232,7 +249,12 @@ query getAllKeyspaces{
 > `Output`
 > ![](img/gql-list-keyspaces.png?raw=true")
 
-- List tables in keyspace `ethereum`
+- `✅ 2.3.h` - Display documentation by click on the `DOCS` panel totally on the right of the playground.
+
+![](img/gql-documentation.png?raw=true")
+
+
+- `✅ 2.3.i` - Display the table list of the keyspace `ethereum`
 
 ```yaml
 query getEthereumKeyspaceTables {
@@ -255,7 +277,11 @@ query getEthereumKeyspaceTables {
 }
 ```
 
-- List content of table `tokens`
+- `✅ 2.3.j` - Change TAB to be in `DATA` and no more in schema, cahnge the end of the url with the keyspace name `ethereum`
+
+![](img/astra-graphql-3.png?raw=true")
+
+- `✅ 2.3.k` - List content of table `tokens`, 
 
 ```yaml
 query getTokenByAddress {
@@ -271,26 +297,26 @@ query getTokenByAddress {
 }
 ```
 
-```yaml
-{
-  "data": {
-    "tokens": {
-      "values": [
-        {
-          "address": "0xc14ca0805194dc4a1319dcad80352d8033763b92",
-          "block_number": "6949212",
-          "block_timestamp": "2018-12-25T08:24:03.000Z",
-          "decimals": 18,
-          "symbol": "WJL"
-        }
-      ]
-    }
-  }
-}
+> `Output`
+> ![](img/gql-gettokens.png?raw=true")
+> ```yaml
+> {
+>   "data": {
+>     "tokens": {
+>       "values": [
+>         {
+>           "address": "0xc14ca0805194dc4a1319dcad80352d8033763b92",
+>           "block_number": "6949212",
+>           "block_timestamp": "2018-12-25T08:24:03.000Z",
+>           "decimals": 18,
+>           "symbol": "WJL"
+>         }
+>       ]
+>     }
+>   }
+> }
 ```
 
-
-- Change TAB to move 
 
 ## LAB3 - Ethereum Explorer
 
