@@ -378,34 +378,28 @@ query getTokenByAddress {
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/datastaxdevs/workshop-astra-block)
 
-
-- `✅ 3.1.b` Initialization
-
-- Set NEXT_PUBLIC_GRAPHQL_ENDPOINT to your Astra DB GraphQL endpoint
-
-- Set API_ACCESS_TOKEN to your Astra token
-Install dependencies: yarn install
-
+- `✅ 3.1.b` Install dependencies. Wait for the environment to start and install dependencies with
 
 ```
-todo
+yean install
 ```
 
 ### 3.2 - Start the app
 
-Start the app with yarn start (if you want to run the app in production mode) or yarn dev for hot reloading
-View the running app at http://localhost:3000/
-
-
-Start the app with yarn start (if you want to run the app in production mode) or yarn dev for hot reloading
-View the running app at http://localhost:3000/
+- `✅ 3.2.a` Start the app with 
 
 ```
-todo
+yarn start 
+```
+
+> **note**: if you want to run the app in production mode) or yarn dev for hot reloading
+
+
+```
+gp url 3000
 ```
 
 ### 3.3 - Deploy to Vercel
 
-```
-todo
-```
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdatastaxdevs%2Fworkshop-astra-block&env=API_ACCESS_TOKEN,NEXT_PUBLIC_GRAPHQL_ENDPOINT&envDescription=Astra%20API%20keys%20needed%20for%20the%20application&project-name=Astra%20Block%20Explorer)
