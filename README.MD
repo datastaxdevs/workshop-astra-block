@@ -29,15 +29,15 @@ Today we are building [THIS](https://eth-explorer.datastax.com/)
 - [1.1 - Create Astra Account](#11---create-an-astra-account)
 - [1.2 - Create Astra Token](#12---create-an-astra-token)
 
-[**LAB2 - Astra Block Quick Start**](#)
-- [2.1 - Request Access](#)
-- [2.2 - Create Astra Block DB](#)
-- [2.3 - First Requests](#)
+[**LAB2 - Astra Block Quick Start**](#2---astra-block-quick-start)
+- [2.1 - Request Access](#21---request-access)
+- [2.2 - Create Astra Block DB](#22---create-astra-block-db)
+- [2.3 - First Requests](#23---first-requests)
 
-[**LAB3 - Ethereum Explorer**](#)
-- [3.1 - Setup the app](#)
-- [3.2 - Start the app](#)
-- [3.3 - Deployment to Vercel](#)
+[**LAB3 - Ethereum Explorer**](#lab3---ethereum-explorer)
+- [3.1 - Setup the app](#31---setup-the-app)
+- [3.2 - Start the app](#32---start-the-app)
+- [3.3 - Deployment to Vercel](#33---deploy-to-vercel)
 
 ## HouseKeeping
 
@@ -72,7 +72,7 @@ In this readme, we try to provide instructions for local development as well - b
 <li>You will need an enough *real estate* on screen, we will ask you to open a few windows and it does not file mobiles (tablets should be OK)
 <li>You will need a GitHub account eventually a google account for the Google Authentication (optional)
 <li>You will need an Astra account: don't worry, we'll work through that in the following
-<li>As Intermediate level we expect you to know what javascript, typescript and NetJS are. 
+<li>As Intermediate level we expect you to know what javascript, typescript and Next JS are. 
 </ul>
 </p>
 </details>
@@ -153,7 +153,6 @@ todo
 
 ### 2.2 - Create Astra Block DB
 
-
 ![](img/astra-home.png?raw=true")
 
 ![](img/astra-create.png?raw=true")
@@ -166,7 +165,38 @@ todo
 
 ### 2.3 - First Requests
 
-- CQL Console, 
+- CQL Console
+
+```sql
+use ethereum ;
+```
+
+```sql
+describe table tokens;
+```
+
+```sql
+select address,decimals,name,symbol,block_timestamp 
+from tokens 
+LIMIT 10;
+```
+
+```
+ address                                    | decimals | name            | symbol | block_timestamp
+--------------------------------------------+----------+-----------------+--------+---------------------------------
+ 0xc14ca0805194dc4a1319dcad80352d8033763b92 |       18 |             WJL |    WJL | 2018-12-25 08:24:03.000000+0000
+ 0x69a2bf7c7fe7cd4ce69b8d645980261582e26e16 |        0 |  Artem Anisimov |     AA | 2019-12-30 14:19:51.000000+0000
+ 0xca3537f73cce6dc0aa1611d79f4b0fdc2dfe31d2 |     null |                 |   null | 2017-02-06 18:28:26.000000+0000
+ 0x17c5134461f501b4c00ac8082d2d5a3ff0ba2d3e |       18 |          YUANZE | YUANZE | 2021-06-11 12:24:53.000000+0000
+ 0x62397c4e8f064a94806abcfc85fb96daf2d43e2c |        0 |                 |        | 2021-07-09 08:47:43.000000+0000
+ 0x69510449d500fcaf8eb79a2f1448019f3854344a |        5 |        SD Chain |     SD | 2020-04-10 12:19:23.000000+0000
+ 0xcbbd061680091d4d84db4db7a8060708d50f5e65 |       18 |          CoinUs |   BNUS | 2019-03-07 10:13:06.000000+0000
+ 0x5da482344df827dccecd7c8aee675c463b12a915 |       18 |    FortFC Token |   FFCT | 2018-09-17 12:42:52.000000+0000
+ 0x2c1bae1aec1bcc328da0cabea8c6a73c076f0af9 |       10 | NothingButBased |  BASED | 2022-10-12 17:33:47.000000+0000
+ 0x99bada568a90e203374ee8ca2d938c1a319d4130 |       18 |             XXH |    XXH | 2018-11-17 06:34:56.000000+0000
+ ```
+
+
 
 - describe tables
 
@@ -174,9 +204,75 @@ todo
 
 - Connect TAB, GraphQL Playground
 
+- List Keyspaces in db `workshop`
+
+```yaml
+query getAllKeyspaces{ 
+  keyspaces {
+    name 
+  } 
+}
 ```
-todo
+
+- List tables in keyspace `ethereum`
+
+```yaml
+query getEthereumKeyspaceTables {
+  keyspace(name:"ethereum") {
+    name
+    tables {
+      name
+      columns {
+        name
+        kind
+        type {
+          basic
+          info {
+            name
+          }
+        }
+      }
+    } 
+  }
+}
 ```
+
+- List content of table `tokens`
+
+```yaml
+query getTokenByAddress {
+  tokens(value:{address:"0xc14ca0805194dc4a1319dcad80352d8033763b92"}) {
+    values {
+      address
+      block_number
+      block_timestamp
+      decimals
+      symbol
+    }
+  }
+}
+```
+
+```yaml
+{
+  "data": {
+    "tokens": {
+      "values": [
+        {
+          "address": "0xc14ca0805194dc4a1319dcad80352d8033763b92",
+          "block_number": "6949212",
+          "block_timestamp": "2018-12-25T08:24:03.000Z",
+          "decimals": 18,
+          "symbol": "WJL"
+        }
+      ]
+    }
+  }
+}
+```
+
+
+- Change TAB to move 
 
 ## LAB3 - Ethereum Explorer
 
