@@ -154,7 +154,15 @@ With Astra Block, you can stream a sanitized blockchain dataset into an Astra da
 
 Upon submission, DataStax will begin reviewing your request. Once your request is approved, a DataStax representative will reach out to you via email to discuss the next steps for creating your Block-enabled database.
 
+```diff
++ As the validation and database creation can take a while we will provide a running database with READ ONLY credentials for you to complete the tutorial.
+```
+
 ### 2.2 - Create Astra Block DB
+
+```diff
+- ⚠️ NOT EXECUTED DURING THE LIVE WORKSHOP
+```
 
 At this time, Block-enabled databases can only be manually created by DataStax upon request.
 
@@ -168,7 +176,6 @@ If you’re already a user of Astra Block and would like to create additional Bl
 
 - `✅ 2.2.b` - Fill DB creation form selecting `Ethereum (Complete Dataset)`
 
-
 ![](img/astra-create.png?raw=true")
 
 
@@ -180,18 +187,21 @@ If you’re already a user of Astra Block and would like to create additional Bl
 
 ![](img/astra-block-request-3.png?raw=true")
 
-### 2.3 - First Requests
+### 2.3 - First Requests with CQL CONSOLE
 
-You are all set with an Active Database containing Ethereum data. Firstly let us use the `CQL Console` to navigate the data.
+```diff
+- ⚠️ NOT EXECUTED DURING THE LIVE WORKSHOP
+```
 
 - `✅ 2.3.a` - Locate tab `CQL Console` and show the console.
+
 
 ![](img/cql-console.png?raw=true")
 
 - `✅ 2.3.b` - Pick the `ethereum` keyspace with CQLSH
 
 ```sql
-use ethereum ;
+use ethereum;
 ```
 
 - `✅ 2.3.c` - Describe tables with CQLSH
@@ -224,17 +234,23 @@ LIMIT 10;
 >  0x99bada568a90e203374ee8ca2d938c1a319d4130 |       18 |             XXH |    XXH | 2018-11-17 06:34:56.000000+0000
 > ```
 
+### 2.4 - Open Astra GraphQL
+
+```diff
+- ⚠️ NOT EXECUTED DURING THE LIVE WORKSHOP
+```
+
 The application will use the GraphQL Api to interact with the database, let us have a look at this API.
 
-- `✅ 2.3.e` - Locate Playground, in the `Connect` Tab by scrolling down and clicking graphQL
+- `✅ 2.4.a` - Locate Playground, in the `Connect` Tab by scrolling down and clicking graphQL
 
 ![](img/astra-graphql-1.png?raw=true")
 
-- `✅ 2.3.f` - There click on the `GraphQL Playground` link.
+- `✅ 2.4.b` - There click on the `GraphQL Playground` link.
 
 ![](img/astra-graphql-2.png?raw=true")
 
-- `✅ 2.3.g` - List Keyspaces in db `workshop`
+- `✅ 2.4.c` - List Keyspaces in db `workshop`
 
 In the left part of the screen enter the following request and validate with the Big triangle button in the middle (play)
 
@@ -248,6 +264,34 @@ query getAllKeyspaces{
 
 > `Output`
 > ![](img/gql-list-keyspaces.png?raw=true")
+
+
+### 2.5 - Open Free GraphQL
+
+```diff
++ ⚠️ EXECUTED DURING THE LIVE WORKSHOP
+```
+
+- `✅ 2.5.a` - Open the free GraphQL playground available at [https://graphql-demo.mead.io](https://graphql-demo.mead.io/)
+
+
+- `✅ 2.5.b` - Change the URL to point to the database update for your
+
+```
+https://4ac96264-a997-47ee-9cad-c97ba836bc6f-us-west-2.apps.astra.datastax.com/api/graphql-schema
+```
+
+- `✅ 2.5.c` - Click on HTTP HEADER and populate
+
+```json
+{
+  "x-cassandra-token": "AstraCS:NTUZWFSHzJFPbNSfHEsiWgoN:8117739d5965d24f0bf23951857a97338d3b049b0761d5bce5cbe6e2e36b2944"
+}
+```
+
+
+### 2.6 - GraphQL queries
+
 
 - `✅ 2.3.h` - Display documentation by click on the `DOCS` panel totally on the right of the playground.
 
@@ -321,16 +365,13 @@ query getTokenByAddress {
 
 ### 3.1 - Setup the app
 
-
-> `✅ 1.3.a` ↗️ _Right Click and select open as a new Tab..._
+> `✅ 3.1.a` ↗️ _Right Click and select open as a new Tab..._
 >
 > [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/datastaxdevs/workshop-astra-block)
 
-### 1.4 - Setup Astra CLI
-
 > **Note**:  The **Astra CLI** is a command-line interface (CLI) tool for managing Apache Cassandra databases hosted on Datastax Astra. It allows developers to perform tasks like creating and managing databases, executing Cassandra queries, and managing security and access control. The Astra CLI simplifies database management and provides an alternative to the Astra web interface, enabling automation and integration with other tools and workflows.
 
-- `✅ 1.4.a` **Locate the terminal called `setup` and check that the CLI is available**
+- `✅ 3.1.b` **Locate the terminal called `setup` and check that the CLI is available**
 
 ```
 astra --version
@@ -343,7 +384,7 @@ astra --version
 > 0.2.1
 > ```
 
-- `✅ 1.4.b` **Trigger the setup command**
+- `✅ 3.1.c` **Trigger the setup command**
 
 ```
 astra setup
