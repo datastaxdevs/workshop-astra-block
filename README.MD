@@ -11,10 +11,12 @@
 
 Today we are building [THIS](https://eth-explorer.datastax.com/)
 
-<img src="https://github.com/datastaxdevs/workshop-astra-block/blob/master/img/demo.png?raw=true">
+<img src="https://github.com/datastaxdevs/workshop-astra-block/blob/main/img/demo.png?raw=true" >
 
 
 ## 📋 Table of content
+
+<img src="https://github.com/datastaxdevs/workshop-astra-block/blob/main/img/menu.png?raw=true" align="right" width="400px"/>
 
 [**HOUSEKEEPING**](#)
 - [Objectives](#objectives)
@@ -40,16 +42,11 @@ Today we are building [THIS](https://eth-explorer.datastax.com/)
 
 ### Objectives
 
-* Discover how to use the following technologies: 
-  * **Spring Data:** the Object Mapping layer of Spring
-  * **Spring Data Cassandra:** what traps to avoid
-  * **Spring Security:** how to handle authentication with OAuth2
-  * **Spring MVC:** how to expose REST API and controllers
-  * **Spring Webflux:** how to use the new `WebClient`
-  * **Thymeleaf:** how to build a user interface with Spring
-  * **Spring Test:** How to run tests
-  * **Astra DB** (a Database-as-a-service built on Apache Cassandra)
-* Han fun with an interactive session
+* Give you an first understanding about Blockchain and Web3
+* Present the limitation of blockchain for realtime applications and how off loading can fix it.
+* Discover NoSQl dsitributed databases and specially Apache Cassandra
+* Show a sample usage of the GraphQL API provided by stargate on top of Cassandra.
+* Introduce to AstraDB and Astra Block providing you the blockhain offloading.
 
 ### Acknowledgements
 
