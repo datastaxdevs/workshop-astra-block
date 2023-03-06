@@ -167,6 +167,8 @@ todo
 
 - CQL Console
 
+![](img/cql-console.png?raw=true")
+
 ```sql
 use ethereum ;
 ```
@@ -204,6 +206,11 @@ LIMIT 10;
 
 - Connect TAB, GraphQL Playground
 
+![](img/gql-documentation.png?raw=true")
+
+![](img/gql-gettokens.png?raw=true")
+
+
 - List Keyspaces in db `workshop`
 
 ```yaml
@@ -213,6 +220,9 @@ query getAllKeyspaces{
   } 
 }
 ```
+
+> `Output`
+> ![](img/gql-list-keyspaces.png?raw=true")
 
 - List tables in keyspace `ethereum`
 
