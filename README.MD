@@ -13,21 +13,21 @@ Today we are building [THIS](https://eth-explorer.datastax.com/)
 
 <img src="https://github.com/datastaxdevs/workshop-astra-block/blob/main/img/demo.png?raw=true" >
 
+> **Info**: [Documentation of the product used today](https://docs.datastax.com/en/astra-serverless/docs/block/overview.html
+)
 
 ## 📋 Table of content
 
-<img src="https://github.com/datastaxdevs/workshop-astra-block/blob/main/img/menu.png?raw=true" align="right" width="400px"/>
+<img src="https://github.com/datastaxdevs/workshop-astra-block/blob/main/img/menu.png?raw=true" align="right" width="250px"/>
 
 [**HOUSEKEEPING**](#)
 - [Objectives](#objectives)
-- [Acknowledgements](#acknowledgements)
 - [Frequently asked questions](#frequently-asked-questions)
 - [Materials for the Session](#materials-for-the-session)
 
 [**LAB1 - Database Initialization**](#1-database-initialization)
 - [1.1 - Create Astra Account](#11---create-an-astra-account)
 - [1.2 - Create Astra Token](#12---create-an-astra-token)
-- [1.3 - Apply for Astra Block](#)
 
 [**LAB2 - Astra Block Quick Start**](#)
 - [2.1 - Request Access](#)
@@ -37,6 +37,7 @@ Today we are building [THIS](https://eth-explorer.datastax.com/)
 [**LAB3 - Ethereum Explorer**](#)
 - [3.1 - Setup the app](#)
 - [3.2 - Start the app](#)
+- [3.3 - Deployment to Vercel](#)
 
 ## HouseKeeping
 
@@ -48,10 +49,6 @@ Today we are building [THIS](https://eth-explorer.datastax.com/)
 * Show a sample usage of the GraphQL API provided by stargate on top of Cassandra.
 * Introduce to AstraDB and Astra Block providing you the blockhain offloading.
 
-### Acknowledgements
-
-This application has been built based on the work of [**Java Brains**](https://www.youtube.com/channel/UCYt1sfh5464XaDBH0oH_o7Q), a famous youtuber *(500k+ subscribers)*. On his channel you can find the full [*Code with me Series*](https://www.youtube.com/watch?v=LxVGFBRpEFM), 16 episodes for building this application step-by-step. The link to each episode is provided at the end of this readme.
-
 ### Frequently asked questions
 
 <p/>
@@ -61,8 +58,8 @@ This application has been built based on the work of [**Java Brains**](https://w
 <p>There is nothing preventing you from running the workshop on your own machine, If you do so, you will need the following
 <ol>
 <li><b>git</b> installed on your local system
-<li><b>JDK 8+</b> installed on your local system
-<li><b>Maven 3.6+</b> installed on your local system
+<li><b>Javascript</b> installed on your local system
+<li><b>Npm, Typescript</b> installed on your local system
 </ol>
 </p>
 In this readme, we try to provide instructions for local development as well - but keep in mind that the main focus is development on Gitpod, hence <strong>We can't guarantee live support</strong> about local development in order to keep on track with the schedule. However, we will do our best to give you the info you need to succeed.
@@ -75,7 +72,7 @@ In this readme, we try to provide instructions for local development as well - b
 <li>You will need an enough *real estate* on screen, we will ask you to open a few windows and it does not file mobiles (tablets should be OK)
 <li>You will need a GitHub account eventually a google account for the Google Authentication (optional)
 <li>You will need an Astra account: don't worry, we'll work through that in the following
-<li>As Intermediate level we expect you to know what java and Spring are. 
+<li>As Intermediate level we expect you to know what javascript, typescript and NetJS are. 
 </ul>
 </p>
 </details>
@@ -115,7 +112,7 @@ we have you covered. In this repository, you'll find everything you need for thi
 
 - `✅ 1.1.a` - Access [https://astra.datastax.com](https://astra.datastax.com) and register with `Google` or `Github` account
 
-![](https://github.com/DataStax-Academy/cassandra-for-data-engineers/blob/main/images/setup-astra-1.png?raw=true)
+![](img/astra-login.png?raw=true")
 
 ### 1.2 - Create an Astra Token
 
@@ -128,3 +125,92 @@ we have you covered. In this repository, you'll find everything you need for thi
 - `✅ 1.2.c` - Copy your token in the clipboard. With this token we will now create what is needed for the training.
 
 ![](https://github.com/DataStax-Academy/cassandra-for-data-engineers/blob/main/images/setup-astra-3.png?raw=true)
+
+
+## 2. - Astra Block Quick Start
+
+- https://www.datastax.com/products/astra-block
+
+- https://docs.datastax.com/en/astra-serverless/docs/block/overview.html
+
+- https://docs.datastax.com/en/astra-serverless/docs/block/quickstart.html
+
+
+### 2.1 - Request Access
+
+![](img/astra-block-request.png?raw=true")
+
+![](img/astra-block-request-2.png?raw=true")
+
+
+
+```
+todo
+```
+```
+todo
+```
+
+### 2.2 - Create Astra Block DB
+
+
+![](img/astra-home.png?raw=true")
+
+![](img/astra-create.png?raw=true")
+
+![](img/astra-initializing.png?raw=true")
+
+```
+todo
+```
+
+### 2.3 - First Requests
+
+- CQL Console, 
+
+- describe tables
+
+- select tokens limit10
+
+- Connect TAB, GraphQL Playground
+
+```
+todo
+```
+
+## LAB3 - Ethereum Explorer
+
+### 3.1 - Setup the app
+
+- CLI ?
+
+- Create a .env file using the .env.example as an example
+
+- Set NEXT_PUBLIC_GRAPHQL_ENDPOINT to your Astra DB GraphQL endpoint
+
+- Set API_ACCESS_TOKEN to your Astra token
+Install dependencies: yarn install
+
+
+```
+todo
+```
+
+### 3.2 - Start the app
+
+Start the app with yarn start (if you want to run the app in production mode) or yarn dev for hot reloading
+View the running app at http://localhost:3000/
+
+
+Start the app with yarn start (if you want to run the app in production mode) or yarn dev for hot reloading
+View the running app at http://localhost:3000/
+
+```
+todo
+```
+
+### 3.3 - Deploy to Vercel
+
+```
+todo
+```
