@@ -32,7 +32,10 @@ Today we are building [THIS](https://eth-explorer.datastax.com/)
 [**LAB2 - Astra Block Quick Start**](#2---astra-block-quick-start)
 - [2.1 - Request Access](#21---request-access)
 - [2.2 - Create Astra Block DB](#22---create-astra-block-db)
-- [2.3 - First Requests](#23---first-requests)
+- [2.3 - First Requests with CQL CONSOLE](#23---first-requests-with-cql-console)
+- [2.4 - Open Astra GraphQL](#24---open-astra-graphql)
+- [2.5 - Open Free GraphQL](#25---open-free-graphql)
+- [2.6 - GraphQL queries](#26---graphql-queries)
 
 [**LAB3 - Ethereum Explorer**](#lab3---ethereum-explorer)
 - [3.1 - Setup the app](#31---setup-the-app)
@@ -154,10 +157,6 @@ With Astra Block, you can stream a sanitized blockchain dataset into an Astra da
 
 Upon submission, DataStax will begin reviewing your request. Once your request is approved, a DataStax representative will reach out to you via email to discuss the next steps for creating your Block-enabled database.
 
-```diff
-+ As the validation and database creation can take a while we will provide a running database with READ ONLY credentials for you to complete the tutorial.
-```
-
 ### 2.2 - Create Astra Block DB
 
 ```diff
@@ -265,7 +264,6 @@ query getAllKeyspaces{
 > `Output`
 > ![](img/gql-list-keyspaces.png?raw=true")
 
-
 ### 2.5 - Open Free GraphQL
 
 ```diff
@@ -289,16 +287,14 @@ https://4ac96264-a997-47ee-9cad-c97ba836bc6f-us-west-2.apps.astra.datastax.com/a
 }
 ```
 
-
 ### 2.6 - GraphQL queries
 
-
-- `✅ 2.3.h` - Display documentation by click on the `DOCS` panel totally on the right of the playground.
+- `✅ 2.6.a` - Display documentation by click on the `DOCS` panel totally on the right of the playground.
 
 ![](img/gql-documentation.png?raw=true")
 
 
-- `✅ 2.3.i` - Display the table list of the keyspace `ethereum`
+- `✅ 2.6.b` - Display the table list of the keyspace `ethereum`
 
 ```yaml
 query getEthereumKeyspaceTables {
@@ -321,11 +317,24 @@ query getEthereumKeyspaceTables {
 }
 ```
 
-- `✅ 2.3.j` - Change TAB to be in `DATA` and no more in schema, cahnge the end of the url with the keyspace name `ethereum`
+- `✅ 2.6.b` - Open a new  TAB and call it `DATA` and provide a new URL
+
+```
+https://4ac96264-a997-47ee-9cad-c97ba836bc6f-us-west-2.apps.astra.datastax.com/api/graphql/ethereum
+```
 
 ![](img/astra-graphql-3.png?raw=true")
 
-- `✅ 2.3.k` - List content of table `tokens`, 
+
+- `✅ 2.6.c` - Upload the header if needed with 
+
+```json
+{
+  "x-cassandra-token": "AstraCS:NTUZWFSHzJFPbNSfHEsiWgoN:8117739d5965d24f0bf23951857a97338d3b049b0761d5bce5cbe6e2e36b2944"
+}
+```
+
+- `✅ 2.6.d` - List content of table `tokens`, 
 
 ```yaml
 query getTokenByAddress {
@@ -365,76 +374,12 @@ query getTokenByAddress {
 
 ### 3.1 - Setup the app
 
-> `✅ 3.1.a` ↗️ _Right Click and select open as a new Tab..._
->
-> [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/datastaxdevs/workshop-astra-block)
+- `✅ 3.1.a` ↗️ _Right Click and select open as a new Tab..._
 
-> **Note**:  The **Astra CLI** is a command-line interface (CLI) tool for managing Apache Cassandra databases hosted on Datastax Astra. It allows developers to perform tasks like creating and managing databases, executing Cassandra queries, and managing security and access control. The Astra CLI simplifies database management and provides an alternative to the Astra web interface, enabling automation and integration with other tools and workflows.
-
-- `✅ 3.1.b` **Locate the terminal called `setup` and check that the CLI is available**
-
-```
-astra --version
-```
-
-> 🖥️ `output`
->
-> ```
-> $ astra --version
-> 0.2.1
-> ```
-
-- `✅ 3.1.c` **Trigger the setup command**
-
-```
-astra setup
-```
-
-> 🖥️ `output`
->
-> ```
->     _____            __                  
->    /  _  \   _______/  |_____________    
->   /  /_\  \ /  ___/\   __\_  __ \__  \  
->  /    |    \\___ \  |  |  |  | \// __ \_ 
->  \____|__  /____  > |__|  |__|  (____  /
->          \/     \/                   \/ 
->            Version: 0.2.1
-> 
->  -----------------------
->  ---      SETUP      ---
->  -----------------------
-> 
-> $ Enter an Astra token:
-> ```
-
-- `✅ 1.4.c` **Provide your token as asked (starting witg AstraCS:..)**
-
-> 🖥️ `output`
->
-> ```
-> [OK]    Configuration has been saved.
-> [OK]    Enter 'astra help' to list available commands.
-> ```
-
-- `✅ 1.4.d` **List your existing Users.**
-
-```bash
-astra user list
-```
-
-> 🖥️ `output`
->
-> ```
-> +--------------------------------------+-----------------------------+---------------------+
-> | User Id                              | User Email                  | Status              |
-> +--------------------------------------+-----------------------------+---------------------+
-> | b665658a-ae6a-4f30-a740-2342a7fb469c | cedrick.lunven@datastax.com | active              |
-> +--------------------------------------+-----------------------------+---------------------+
-> ```
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/datastaxdevs/workshop-astra-block)
 
 
-- Create a .env file using the .env.example as an example
+- `✅ 3.1.b` Initialization
 
 - Set NEXT_PUBLIC_GRAPHQL_ENDPOINT to your Astra DB GraphQL endpoint
 
