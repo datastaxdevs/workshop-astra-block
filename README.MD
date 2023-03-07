@@ -27,12 +27,12 @@ Today we are building [THIS](https://eth-explorer.datastax.com/)
 
 [**LAB1 - Database Initialization**](#1-database-initialization)
 - [1.1 - Create Astra Account](#11---create-an-astra-account)
-- [1.2 - Create Astra Token](#12---create-an-astra-token)
+- [1.2 - Create Astra Token (optional)](#12---create-an-astra-token)
 
 [**LAB2 - Astra Block Quick Start**](#2---astra-block-quick-start)
 - [2.1 - Request Access](#21---request-access)
-- [2.2 - Create Astra Block DB](#22---create-astra-block-db)
-- [2.3 - First Requests with CQL CONSOLE](#23---first-requests-with-cql-console)
+- [2.2 - Create Astra Block DB (optional)](#22---create-astra-block-db)
+- [2.3 - First Requests with Cql Console (optional)](#23---first-requests-with-cql-console)
 - [2.4 - Open Astra GraphQL](#24---open-astra-graphql)
 - [2.5 - Open Free GraphQL](#25---open-free-graphql)
 - [2.6 - GraphQL queries](#26---graphql-queries)
@@ -46,11 +46,11 @@ Today we are building [THIS](https://eth-explorer.datastax.com/)
 
 ### Objectives
 
-* Give you an first understanding about Blockchain and Web3
-* Present the limitation of blockchain for realtime applications and how off loading can fix it.
-* Discover NoSQl dsitributed databases and specially Apache Cassandra
-* Show a sample usage of the GraphQL API provided by stargate on top of Cassandra.
-* Introduce to AstraDB and Astra Block providing you the blockhain offloading.
+* Give you an first understanding about Blockchain and Web3.
+* Present the limitations of blockchains for realtime applications and how off-loading can help.
+* Discover NoSQL dsitributed databases and specially Apache Cassandra™.
+* Show a sample usage of the GraphQL API provided by Stargate on top of Cassandra.
+* Introduce AstraDB and Astra Block.
 
 ### Frequently asked questions
 
@@ -102,8 +102,6 @@ we have you covered. In this repository, you'll find everything you need for thi
 
 - [Slide deck](/slides/slides.pdf)
 - [Discord chat](https://dtsx.io/discord)
-- [Questions and Answers](https://community.datastax.com/)
-- [Twitch backup](https://www.twitch.tv/datastaxdevs)
 
 ----
 
@@ -118,6 +116,10 @@ we have you covered. In this repository, you'll find everything you need for thi
 ![](img/astra-login.png?raw=true")
 
 ### 1.2 - Create an Astra Token
+
+```diff
+- ⚠️ NOT MANDATORY DURING THE LIVE WORKSHOP
+```
 
 - `✅ 1.2.a` Locate `Settings` (#1) in the menu on the left, then `Token Management` (#2) 
 
@@ -139,7 +141,6 @@ With Astra Block, you can stream a sanitized blockchain dataset into an Astra da
 > `More Information:`
 > - [Reference Documentation](https://docs.datastax.com/en/astra-serverless/docs/block/overview.html)
 > - [QuickStart Page](https://docs.datastax.com/en/astra-serverless/docs/block/quickstart.html)
-
 
 ### 2.1 - Request Access
 
@@ -286,6 +287,8 @@ https://4ac96264-a997-47ee-9cad-c97ba836bc6f-us-west-2.apps.astra.datastax.com/a
   "x-cassandra-token": "AstraCS:NTUZWFSHzJFPbNSfHEsiWgoN:8117739d5965d24f0bf23951857a97338d3b049b0761d5bce5cbe6e2e36b2944"
 }
 ```
+
+> This token will be valid only today. It serves the purpose and making you testing with real data but after that you will have to create your won token, your own database.
 
 ### 2.6 - GraphQL queries
 
