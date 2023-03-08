@@ -111,7 +111,7 @@ we have you covered. In this repository, you'll find everything you need for thi
 
 > **Note**: **Datastax Astra** is a cloud-native, fully managed database-as-a-service (DBaaS) based on Apache Cassandra. It provides a scalable, performant and highly available database solution without the operational overhead of managing Cassandra clusters. Astra supports both SQL and NoSQL APIs, and includes features like backup and restore, monitoring and alerting, and access control. It enables developers to focus on application development while the database infrastructure is managed by Datastax.
 
-- `✅ 1.1.a` - Access [https://astra.datastax.com](https://astra.datastax.com) and register with `Google` or `Github` account
+- `✅ 1.1.a` - Access [https://astra.datastax.com](https://astra.dev/yt-03-08) and register with `Google` or `Github` account
 
 ![](img/astra-login.png?raw=true")
 
